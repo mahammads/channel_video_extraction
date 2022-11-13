@@ -26,11 +26,11 @@ def data_to_sql(dataframe, delete_flag =False):
             cursor.execute(query1)
             mydb.commit()
         # to read the records
-        query = "SELECT * FROM transcripts;"
-        df = pd.read_sql(query,mydb)
-        print(df)
+        # query = "SELECT * FROM transcripts;"
+        # df = pd.read_sql(query,mydb)
+        # print(df)
         # to insert the records into table
-        # dataframe.to_sql(con=engine, name='transcripts', if_exists='append', index=False)
+        dataframe.to_sql(con=engine, name='transcripts', if_exists='append', index=False)
         
         mydb.close() #close the connection
     except Exception as e:
@@ -106,6 +106,6 @@ def final_extract(channel_name, delete_flag =False):
     data.columns = ['url', 'title', 'videoid', 'transcript']
     data_to_sql(data, delete_flag)
 if __name__ == "__main__":
-    final_extract(config.channel_name)
+    final_extract(config.channel_name, config.delete_flag)
 
 
