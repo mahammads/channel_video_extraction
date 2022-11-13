@@ -1,0 +1,15 @@
+
+bs4
+mysql-connector
+numpy
+openpyxl
+pandas
+PyMySQL
+python-dateutil
+pytz
+requests
+scrapetube
+SQLAlchemy
+tqdm
+urllib
+youtube-transcript-api==0.5.0
